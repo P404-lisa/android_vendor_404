@@ -116,9 +116,7 @@ $(foreach f,$(wildcard vendor/404/prebuilt/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Gapps
-ifeq ($(WITH_GAPPS),true)
-    $(call inherit-product, vendor/gms/products/gms.mk)
-endif
+$(call inherit-product, vendor/gms/products/gms.mk)
 
 # Treble
 # Enable ALLOW_MISSING_DEPENDENCIES on Vendorless Builds
